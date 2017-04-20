@@ -38,6 +38,9 @@ var app = {
 
         document.getElementById('timestamp').innerHTML = new Date();
         
+        var deviceMobile = document.getElementById('device');
+        deviceMobile.innerHTML = "J'ai un :"+device.version;
+        
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 

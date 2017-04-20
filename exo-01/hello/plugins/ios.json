@@ -12,6 +12,9 @@
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.iesa.milan.cordova"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.iesa.milan.cordova"
         }
     },
     "dependent_plugins": {}
