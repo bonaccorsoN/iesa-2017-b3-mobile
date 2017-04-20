@@ -38,8 +38,34 @@ var app = {
 
         document.getElementById('timestamp').innerHTML = new Date();
         
-        var deviceMobile = document.getElementById('device');
-        deviceMobile.innerHTML = "J'ai un :"+device.version;
+       /* var deviceMobile = document.getElementById('device');
+        deviceMobile.innerHTML = '<ul data-role="listview" id="list">'
+        +'<li data-icon="arow-l">Name: '+device.manufacturer + '</li>'
+        +'<li data-icon="arow-l">Model: '+device.model + '</li>'
+        +'<li data-icon="arow-l">Cordova: '+device.cordova + '</li>'
+        +'<li data-icon="arow-l">Platform: '+device.platform + '</li>'
+        +'<li data-icon="arow-r">UUID: '+device.uuid + '</li>'
+        +'<li data-icon="arow-l">Version: '+device.version + '</li>'
+        +'</ul>'
+        ;*/
+        
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+            
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.CELL_4G]  = 'Cell 4G connection';
+            states[Connection.CELL]     = 'Cell generic connection';
+            states[Connection.NONE]     = 'No network connection';
+            
+            alert('Connection type: ' + states[networkState]);
+        }
+        
+        checkConnection();
         
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
